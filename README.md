@@ -5,5 +5,6 @@ When you're done with that, press the"add" button.
 If you want to add new prize you got, just press 
 that prize's button and "add" button, 
 spin's number changes automatically.
-Mobile-friendly version will add soon.
+Mobile-friendly version will try to add soon.
 Site too.
+The folder on top contains old version of html code, it's exactly the same as the one outside except "how to use" text. 
