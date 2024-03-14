@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>St. Patrick's Day Event's research</title>
+  <style>
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .button {
+      margin: 10px;
+    }
+    #output-field {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>St. Patrick's Day Event's research</h2>
+  <h3>@devyatnidesyat</h3>
+  <label for="numberInput">Enter a number (n): </label>
+  <input type="number" id="numberInput">
+  
+  <div class="button-container">
+    <button class="button" data-index="1" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-37 (2).jpg" style="width: 300px; height: 300px;" alt="Awakening Crystal"> AC </button>
+    <button class="button" data-index="2" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-36 (3).jpg" style="width: 300px; height: 300px;" alt="Spin again"> SA </button>
+    <!-- Add more buttons as needed -->
+    <!-- ^ gpt was lazy ass here and added 2 buttons out of 11 lol -->
+    <button class="button" data-index="3" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-37.jpg" style="width: 300px; height: 300px;" alt="Blue Pet Key"> BPK </button>
+    <button class="button" data-index="4" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-37 (3).jpg" style="width: 300px; height: 300px;" alt="Panda Shard"> PS </button>
+    <button class="button" data-index="5" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-36 (8).jpg" style="width: 300px; height: 300px;" alt="1 Purple Pet Key"> 1PPK </button>
+    <button class="button" data-index="6" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-36 (7).jpg" style="width: 300px; height: 300px;" alt="5 Purple Pet Key"> 5PPK </button>
+    <button class="button" data-index="7" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-36 (6).jpg" style="width: 300px; height: 300px;" alt="Pet Cookie"> PC </button>
+    <button class="button" data-index="8" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-36 (4).jpg" style="width: 300px; height: 300px;" alt="RANDOM Pet Gift"> GPG </button>
+    <button class="button" data-index="9" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-36 (2).jpg" style="width: 300px; height: 300px;" alt="Purple Pet Gift"> PPG </button>
+    <button class="button" data-index="10" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-36 (5).jpg" style="width: 300px; height: 300px;" alt="Blue Pet Gift"> BPG </button>
+    <button class="button" data-index="11" style="width: 300px; height: 300px;">
+        <img src="photo_2024-03-14_14-18-36.jpg" style="width: 300px; height: 300px;" alt="Gold Pet Gift Selector"> GPGS </button>
+    
+  </div>
+  
+  <button id="addButton">Add</button>
+  
+  <div id="output-field"></div>
+  
+  <button id="copyButton">Copy to Clipboard</button>
+
+  <script>
+    var k = 1;
+    var i = -1;
+    document.getElementById('addButton').addEventListener('click', function() {
+      i=i+1;
+      var n = document.getElementById('numberInput').value;
+      var selectedIndex = document.querySelector('.button.selected').getAttribute('data-index');
+      var selectedButton = document.querySelector('.button.selected').innerText.trim();
+
+      var outputField = document.getElementById('output-field');
+      var currentOutput = outputField.innerHTML;
+      if (k==1 && n!="") {
+        n=parseInt(n)+parseInt(i);
+        outputField.innerHTML = currentOutput + "!upload " + n + " " + selectedButton;
+        k=2;
+      } else if (k==2) {
+        n=parseInt(n)+parseInt(i);
+        outputField.innerHTML = currentOutput + "<br>" + n + " " + selectedButton;
+      } else {
+        outputField.innerHTML = "error occured"
+      }
+});
+
+
+    document.querySelectorAll('.button').forEach(function(button) {
+      button.addEventListener('click', function() {
+        document.querySelectorAll('.button').forEach(function(btn) {
+          btn.classList.remove('selected');
+        });
+        this.classList.add('selected');
+      });
+    });
+
+    document.getElementById('copyButton').addEventListener('click', function() {
+      var outputField = document.getElementById('output-field');
+      var outputText = outputField.innerText;
+
+      navigator.clipboard.writeText(outputText).then(function() {
+        alert('Copied to clipboard!');
+      }).catch(function(error) {
+        console.error('Failed to copy: ', error);
+      });
+    });
+  </script>
+</body>
+</html>
