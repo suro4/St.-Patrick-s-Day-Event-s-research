@@ -1,5 +1,5 @@
 How to start: download the top folder "stpatrickevent", which contains html.html file and images for buttons. Than open html.html file in your browser.
-How to use: enter spin's № in the line below,
+How to use: enter spin's № in the line,
 than choose the prize that you got at that spin. 
 Only the last pressed prize's button counts. 
 When you're done with that, press the"add" button. 
