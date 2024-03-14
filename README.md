@@ -1,3 +1,4 @@
+How to start: download the top folder 
 How to use: enter spin's № in the line below,
 than choose the prize that you got at that spin. 
 Only the last pressed prize's button counts. 
